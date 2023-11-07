@@ -50,22 +50,22 @@ class _Home extends StatelessWidget {
                 }
                 final tasks = snap.data;
 
-                // return ListView(
-                //   children: tasks!.map((task) => TaskTile(task: task)).toList(),
-                // );
-                return GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount:
-                        2, // You can adjust the number of columns as needed
-                    crossAxisSpacing:
-                        10.0, // Adjust the spacing between columns
-                    mainAxisSpacing: 10.0, // Adjust the spacing between rows
-                  ),
-                  itemBuilder: (context, index) {
-                    return TaskTile(task: tasks[index]);
-                  },
-                  itemCount: tasks!.length,
+                return ListView(
+                  children: tasks!.map((task) => TaskTile(task: task)).toList(),
                 );
+                // return GridView.builder(
+                //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                //     crossAxisCount:
+                //         2, // You can adjust the number of columns as needed
+                //     crossAxisSpacing:
+                //         10.0, // Adjust the spacing between columns
+                //     mainAxisSpacing: 10.0, // Adjust the spacing between rows
+                //   ),
+                //   itemBuilder: (context, index) {
+                //     return TaskTile(task: tasks[index]);
+                //   },
+                //   itemCount: tasks!.length,
+                // );
               },
             );
           },
